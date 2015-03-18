@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kana</title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+	<main id="body">
+		<div class="bg end"></div>
+		<div class="paper bg main paper-1"></div>
+		<div class="paper bg main paper-2"></div>
+		<article class="paper main">
+			<header>
+				<h2>酷炫的标题</h2>
+				<p class="author">yayu.wang</p>
+			</header>
+			<div class="cnt">
+				
+			</div>
+		</article>
+	</main>
+
+    <script>
+    	function $(seletor){
+    		return document.querySelector(seletor);
+    	}
+    	function $$(seletor){
+    		return document.querySelectorAll(seletor);
+    	}
+
+
+    	var main_papers = $$('.paper.main'),
+    		_index = main_papers.length - 1;
+
+    	setTimeout(function(){
+
+    		//start animation
+    		flyUp(main_papers[_index]);
+	    	document.onkeyup = function(event){
+	    		if(event.keyCode == 39){
+	    			main_papers[_index].classList.add('turned');
+		    		_index--;
+		    		if(_index >= 0){
+		    			flyUp(main_papers[_index]);
+		    		}else{
+	    				this.onkeyup = null;
+		    		}
+	    		}
+	    	};
+    	}, 1000);
+
+    	function flyUp(paper){
+    		//fly up
+    		paper.classList.add('fly');
+    		//float around
+    		setTimeout(function(){
+    			paper.classList.add('float');
+    		}, 1000);
+    	}
+    </script>
+</body>
+</html>

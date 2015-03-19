@@ -5,24 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>kana</title>
 <link rel="stylesheet" href="css/index.css">
+<script src="js/avalon.modern.js"></script>
 </head>
-<body>
+<body ms-controller="kana">
 
-	<main id="body">
+	<div class="box">
 		<div class="bg end"></div>
-		<div class="paper bg main paper-1"></div>
-		<div class="paper bg main paper-2"></div>
-		<article class="paper main">
-			<header>
-				<h2>酷炫的标题</h2>
-				<p class="author">yayu.wang</p>
-			</header>
-			<div class="cnt">
-				
+		<div class="side bg side-1"></div>
+		<div class="side bg side-2"></div>
+		<div class="card" ms-click="clickCard" ms-class="turn-over: isTurnOver" draggable="true">
+			<div class="side front">
+				正面
 			</div>
-		</article>
-	</main>
+			<div class="side back">
+				背面
+			</div>
+		</div>
+	</div>
 
+	<script src="js/index.js"></script>
     <script>
     	function $(seletor){
     		return document.querySelector(seletor);
@@ -32,19 +33,19 @@
     	}
 
 
-    	var main_papers = $$('.paper.main'),
-    		_index = main_papers.length - 1;
+    	/*var_sides = $$('.side'),
+    		_index =_sides.length - 1;
 
     	setTimeout(function(){
 
-    		//start animation
-    		flyUp(main_papers[_index]);
+    		// start animation
+    		// flyUp_sides[_index]);
 	    	document.onkeyup = function(event){
 	    		if(event.keyCode == 39){
-	    			main_papers[_index].classList.add('turned');
+	    		_sides[_index].classList.add('turned');
 		    		_index--;
 		    		if(_index >= 0){
-		    			flyUp(main_papers[_index]);
+		    			flyUp([_index]);
 		    		}else{
 	    				this.onkeyup = null;
 		    		}
@@ -52,14 +53,14 @@
 	    	};
     	}, 1000);
 
-    	function flyUp(paper){
+    	function flyUp(side){
     		//fly up
-    		paper.classList.add('fly');
+    		side.classList.add('fly');
     		//float around
     		setTimeout(function(){
-    			paper.classList.add('float');
+    			side.classList.add('float');
     		}, 1000);
-    	}
+    	}*/
     </script>
 </body>
 </html>

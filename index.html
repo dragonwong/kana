@@ -5,23 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>kana</title>
 <link rel="stylesheet" href="css/index.css">
-<script src="js/avalon.modern.js"></script>
+<script src="js/avalon.mobile.shim.js"></script>
 </head>
 <body ms-controller="kana">
 
 	<div class="box">
-		<div class="bg end"></div>
-		<div class="side bg side-1"></div>
-		<div class="side bg side-2"></div>
-		<div class="card" ms-click="clickCard" ms-class="turn-over: isTurnOver" draggable="true">
+		<div class="card stack-1">
 			<div class="side front">
-				正面
+				<p>正面</p>
 			</div>
-			<div class="side back">
-				背面
+			<div class="side back">背面</div>
+		</div>
+		<div class="card stack-2">
+			<div class="side front">
+				<p>正面</p>
 			</div>
+			<div class="side back">背面</div>
+		</div>
+		<div class="card stack-3">
+			<div class="side front">
+				<p>正面</p>
+			</div>
+			<div class="side back">背面</div>
+		</div>
+		<div class="card" ms-class-1="turn-over: isTurnOver" ms-class-2="{{swip}}" draggable="true" ms-click="turnOver" ms-on-swipeleft="swipeleft">
+			<div class="side front">
+				<p>正面</p>
+				<p>{{act}}</p>
+			</div>
+			<div class="side back">背面</div>
 		</div>
 	</div>
+
+	<a href="http://www.zhangxinxu.com/study/201210/css3-animate-flip-example.html" target="_blank">demo</a>
 
 	<script src="js/index.js"></script>
     <script>

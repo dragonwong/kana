@@ -42,7 +42,7 @@ var kana = avalon.define({
 			name: 'A'
 		}
 	}, {
-		isCur: true,
+		isCur: false,
 		isTurnOver: false,
 		isSwipe: false,
 		data: {
@@ -50,3 +50,7 @@ var kana = avalon.define({
 		}
 	}]
 })
+
+setTimeout(function() {
+	kana.cards[kana.cards.length - 1].isCur = true;
+}, 1000)

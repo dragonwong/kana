@@ -67,9 +67,30 @@ p {
 				background: #fff;
 				box-sizing: border-box;
 				padding: 20px 0;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
 			}
 			.side.back {
 				-webkit-transform: translate3d(0px, 0px, -1px) rotateY(180deg);
+			}
+				.side.back p {
+					display: -webkit-box;
+					-webkit-box-pack:center;
+					-webkit-box-align: center;
+				}
+				.side.back .hiragana, .side.back .katakana {
+					-webkit-box-flex: 2;
+					font-size: 3em;
+				}
+				.side.back .phonetic {
+					-webkit-box-flex: 1;
+					font-size: 2em;
+					color: #999;
+				}
+			.side.front {
+				font-size: 5em;
+				-webkit-box-pack:center;
+				-webkit-box-align: center;
 			}
 
 		

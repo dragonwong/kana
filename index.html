@@ -14,12 +14,12 @@
 		<div class="card bg-2"></div>
 		<div ms-repeat="cards" class="card" ms-class="cur: el.isCur" ms-class-1="turn-over: el.isTurnOver" ms-class-2="swipe: el.isSwipe" ms-click="turnOver($index)" ms-on-swipeleft="swipe($index)">
 			<div class="side front">
-				<p>{{el.data.name}}</p>
-				<p>正面</p>
+				{{el.data.hiragana}}
 			</div>
 			<div class="side back">
-				<p>{{el.data.name}}</p>
-				<p>背面</p>
+				<p class="hiragana">{{el.data.hiragana}}</p>
+				<p class="katakana">{{el.data.katakana}}</p>
+				<p class="phonetic">{{el.data.phonetic}}</p>
 			</div>
 		</div>
 	</div>
@@ -27,43 +27,5 @@
 	<a href="http://www.zhangxinxu.com/study/201210/css3-animate-flip-example.html" target="_blank">demo</a>
 
 	<script src="js/index.js"></script>
-    <script>
-    	function $(seletor){
-    		return document.querySelector(seletor);
-    	}
-    	function $$(seletor){
-    		return document.querySelectorAll(seletor);
-    	}
-
-
-    	/*var_sides = $$('.side'),
-    		_index =_sides.length - 1;
-
-    	setTimeout(function(){
-
-    		// start animation
-    		// flyUp_sides[_index]);
-	    	document.onkeyup = function(event){
-	    		if(event.keyCode == 39){
-	    		_sides[_index].classList.add('turned');
-		    		_index--;
-		    		if(_index >= 0){
-		    			flyUp([_index]);
-		    		}else{
-	    				this.onkeyup = null;
-		    		}
-	    		}
-	    	};
-    	}, 1000);
-
-    	function flyUp(side){
-    		//fly up
-    		side.classList.add('fly');
-    		//float around
-    		setTimeout(function(){
-    			side.classList.add('float');
-    		}, 1000);
-    	}*/
-    </script>
 </body>
 </html>

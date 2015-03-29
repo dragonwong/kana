@@ -205,6 +205,18 @@ var clickable = true,
 var kana = avalon.define({
 	$id: 'kana',
 
+	cards: [{
+		isCur: false,
+		isTurnOver: false,
+		isSwipe: false,
+		data: {}
+	}, {
+		isCur: false,
+		isTurnOver: false,
+		isSwipe: false,
+		data: {}
+	}],
+
 	turnOver: function(index) {
 		var thisCard = kana.cards[index]
 
@@ -243,19 +255,8 @@ var kana = avalon.define({
 				thatCard.isCur = true
 			}, 1800)
 		}
-	},
+	}
 
-	cards: [{
-		isCur: false,
-		isTurnOver: false,
-		isSwipe: false,
-		data: {}
-	}, {
-		isCur: false,
-		isTurnOver: false,
-		isSwipe: false,
-		data: {}
-	}]
 })
 
 kana.cards[0].data = cardGroup.pop();
@@ -265,9 +266,51 @@ setTimeout(function() {
 	kana.cards[kana.cards.length - 1].isCur = true;
 }, 1000)
 
+var cntStyle = $('.cnt').style
+cntStyle.width = document.body.clientWidth + 'px'
+cntStyle.height = document.body.clientHeight + 'px'
+
+/**
+ * 菜单
+ */
+var isMenuOpen = false,
+	domMenu = $('#menu');
+
+$('#btn-menu').onclick = function() {
+	if (isMenuOpen) {
+		domMenu.classList.remove('on')
+		domMenu.classList.add('off')
+		this.classList.remove('close')
+	} else {
+		domMenu.classList.remove('off')
+		domMenu.classList.add('on')
+		this.classList.add('close')
+	}
+	isMenuOpen = !isMenuOpen
+}
+
 /**
  * Get a random number in [0, max)
  */
 function getRandom(max) {
 	return Math.floor(Math.random() * max);
+}
+
+/*
+var x, y;
+
+document.body.addEventListener('touchstart', function(e) {
+	x = e.changedTouches[0].clientX
+	y = e.changedTouches[0].clientY
+})
+document.body.addEventListener('touchmove', function(e) {
+	var dirX;
+	if (e.changedTouches[0].clientX > x) {
+		dirX = '右'
+	}
+	// console.log(e.changedTouches[0].clientX - x)
+})*/
+
+function $(str) {
+	return document.querySelector(str)
 }

@@ -202,6 +202,12 @@ var clickable = true,
 		}
 	};
 
+/**
+ * 菜单
+ */
+var isMenuOpen = false,
+	domMenu = $('#menu');
+
 var kana = avalon.define({
 	$id: 'kana',
 
@@ -255,8 +261,19 @@ var kana = avalon.define({
 				thatCard.isCur = true
 			}, 1800)
 		}
+	},
+	tapBtnMenu: function() {
+		if (isMenuOpen) {
+			domMenu.classList.remove('on')
+			domMenu.classList.add('off')
+			this.classList.remove('close')
+		} else {
+			domMenu.classList.remove('off')
+			domMenu.classList.add('on')
+			this.classList.add('close')
+		}
+		isMenuOpen = !isMenuOpen
 	}
-
 })
 
 kana.cards[0].data = cardGroup.pop();
@@ -270,24 +287,6 @@ var cntStyle = $('.cnt').style
 cntStyle.width = document.body.clientWidth + 'px'
 cntStyle.height = document.body.clientHeight + 'px'
 
-/**
- * 菜单
- */
-var isMenuOpen = false,
-	domMenu = $('#menu');
-
-$('#btn-menu').onclick = function() {
-	if (isMenuOpen) {
-		domMenu.classList.remove('on')
-		domMenu.classList.add('off')
-		this.classList.remove('close')
-	} else {
-		domMenu.classList.remove('off')
-		domMenu.classList.add('on')
-		this.classList.add('close')
-	}
-	isMenuOpen = !isMenuOpen
-}
 
 /**
  * Get a random number in [0, max)

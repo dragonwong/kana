@@ -3,18 +3,21 @@ kana
 
 This is a web app for learning kana.
 
+support
+---
+
+- Safari
+
+- Chrome
+
+- iPhone 5s 微信
+
 done
 ---
 
-- 清音随机抽取功能完成
-
-- iPhone 5s safari 功能测试完成
+- 清音 + 浊音 随机抽取功能
 
 todo
 ---
 
-- 动画时菜单按钮无法点击
-
 - 安卓手机测试
-
-- 去 avalon

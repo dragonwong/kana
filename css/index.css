@@ -43,7 +43,7 @@ body {
 	height: 100%;
 	margin: 0;
 	font-family: "Microsoft Yahei","微软雅黑","黑体","SimHei",Arial,sans-serif;
-	background: url(../img/kana.png);
+	background: url(../img/bg.png);
 	perspective: 1000px;
 	-webkit-perspective: 1000px;
 	/* display: -webkit-box;
